@@ -335,8 +335,14 @@ const Dashboard: React.FC = () => {
         setUserFarms(farms);
         
         // Determine active farm
-        let farmDetails = farms.find(f => f.id === activeFarmId) || farms[0];
-        if (!activeFarmId) setActiveFarmId(farmDetails.id || null);
+        const cachedFarmId = localStorage.getItem("uvion_active_farm_id");
+        let farmDetails = farms.find(f => f.id === (activeFarmId || cachedFarmId)) || farms[0];
+        if (farmDetails.id) {
+          localStorage.setItem("uvion_active_farm_id", farmDetails.id);
+          if (activeFarmId !== farmDetails.id) {
+            setActiveFarmId(farmDetails.id);
+          }
+        }
         
         setFarmData(farmDetails);
         localStorage.setItem("uvion_crop_type", farmDetails.cropType);
@@ -662,7 +668,11 @@ const Dashboard: React.FC = () => {
                 <select 
                   className="top-crop-tag" 
                   value={activeFarmId || ""} 
-                  onChange={(e) => setActiveFarmId(e.target.value)}
+                  onChange={(e) => {
+                    const newId = e.target.value;
+                    setActiveFarmId(newId);
+                    localStorage.setItem("uvion_active_farm_id", newId);
+                  }}
                   style={{ background: 'rgba(16, 185, 129, 0.2)', border: '1px solid #10b981', color: '#10b981', fontWeight: 700, padding: '0.4rem 1rem', borderRadius: '20px', cursor: 'pointer', outline: 'none' }}
                 >
                   {userFarms.map((farm) => (

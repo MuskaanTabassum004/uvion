@@ -2208,6 +2208,8 @@ const Dashboard: React.FC = () => {
       <YuviWidget 
         farmState={{
           crop: farmData?.cropType || "Unknown",
+          location: farmData?.location || "Unknown",
+          growth_stage: growthData?.current_stage || "Vegetative",
           weather: weatherIntelligence || {},
           soil: farmingInsights?.fertilizer_plan?.target_npk || {},
           insights: farmingInsights,

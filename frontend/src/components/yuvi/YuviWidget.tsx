@@ -31,6 +31,15 @@ const YuviWidget: React.FC<YuviWidgetProps> = ({ farmState }) => {
     }
   }, [messages]);
 
+  // Reset chat history when the crop changes so YUVI advisor answers about the new active crop
+  useEffect(() => {
+    if (farmState?.crop) {
+      setMessages([
+        { role: 'model', content: `Hello! I'm YUVI, your personal Farm Assistant. How can I help you with your ${farmState.crop} today?` }
+      ]);
+    }
+  }, [farmState?.crop]);
+
   const suggestions = [
     "Should I irrigate today?",
     "Why is growth slow?",

@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+joblib
+scikit-learn
+watchfiles
+tensorflow
+Pillow
+h5py

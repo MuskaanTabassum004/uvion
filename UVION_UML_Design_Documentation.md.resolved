@@ -1,0 +1,38 @@
+# UVION System Design & UML Documentation
+
+This document contains the complete technical architecture and design specifications for the UVION AI-Powered Farming System.
+
+---
+
+## 1. System Architecture Design
+![System Architecture Design](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_system_architecture_1777383555114.png)
+
+---
+
+## 2. Data Flow Diagram
+![Data Flow Diagram](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_data_flow_diagram_1777383575383.png)
+
+---
+
+## 3. E-R Diagram
+![E-R Diagram](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_er_diagram_1777383594812.png)
+
+---
+
+## 4. Usecase Diagram
+![Usecase Diagram](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_use_case_diagram_1777383612383.png)
+
+---
+
+## 5. Sequence Diagram
+![Sequence Diagram](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_sequence_diagram_1777383634201.png)
+
+---
+
+## 6. Class Diagram
+![Class Diagram](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_class_diagram_1777383656445.png)
+
+---
+
+## 7. Activity Diagram
+![Activity Diagram](/C:/Users/muska/.gemini/antigravity/brain/fb95d6e4-6296-4148-80b3-8bf8f9ada050/uvion_activity_diagram_1777383701702.png)

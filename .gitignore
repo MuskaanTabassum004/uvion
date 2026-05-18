@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+jspm_packages/
+web_modules/
+
+# Production Builds
+dist/
+build/
+out/
+
+# IDE / System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Caches and Temp
+.npm/
+.eslintcache
+.parcel-cache
+.turbo/
+.vercel/
+.gemini/
+brain/
+artifacts/
+scratch/
+.tempmediaStorage/
+
+# Local Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# Python Virtual Environments & Packages
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Databases
+*.db
+*.sqlite3
+sqlite_data/

@@ -1,0 +1,7 @@
+Temparature,Humidity ,Moisture,Soil Type,Crop Type,Nitrogen,Potassium,Phosphorous,Fertilizer Name
+26,52,38,Sandy,maize,37,0,0,Urea
+31,62,48,Sandy,maize,14,15,12,17-17-17
+26,52,44,Sandy,maize,23,0,20,28-28
+33,64,51,Sandy,maize,5,9,29,14-35-14
+30,60,47,Sandy,maize,22,0,21,28-28
+28,54,25,Sandy,maize,9,10,30,14-35-14

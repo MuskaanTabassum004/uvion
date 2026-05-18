@@ -1,0 +1,100 @@
+# 🚜 UVION - COMPLETE SETUP & INSTALLATION MANUAL
+
+This manual provides the necessary steps to deploy and run the UVION Smart Farming Platform. Follow these instructions carefully to configure your API keys and environment variables.
+
+---
+
+## 📋 1. PREREQUISITES
+Before starting, ensure you have the following installed:
+- **Node.js** (v18.0 or higher)
+- **Python** (v3.9 or higher)
+- **Git** (for version control)
+- **A Firebase Project** (Created at [console.firebase.google.com](https://console.firebase.google.com))
+- **An OpenWeatherMap API Key** (Obtained at [openweathermap.org](https://openweathermap.org/api))
+
+---
+
+## 🛠️ 2. BACKEND SETUP (FastAPI)
+
+### 2.1 Installation
+1. Open a terminal in the `/backend` directory.
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### 2.2 Manual Edits (Configuration)
+Open `main.py` or create a `.env` file in the backend root and ensure the following:
+- **Weather API Key:** Find the `WEATHER_API_KEY` variable and paste your OpenWeatherMap key.
+- **Port Selection:** The backend is configured to run on **Port 8003**. If you change this, you must also update the frontend config.
+
+---
+
+## 💻 3. FRONTEND SETUP (React + Vite)
+
+### 3.1 Installation
+1. Open a terminal in the `/frontend` directory.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### 3.2 Manual Edits (Configuration)
+You **MUST** perform these two edits for the application to function:
+
+#### A. Environment Variables
+Create or edit the file `frontend/.env.local` and add:
+```env
+VITE_API_BASE_URL=http://127.0.0.1:8003
+VITE_WEATHER_API_KEY=your_open_weather_key_here
+```
+
+#### B. Firebase Configuration
+Open `frontend/src/services/firebase.ts` (or your equivalent config file).
+Locate the `firebaseConfig` object and replace the placeholders with your actual Firebase project keys:
+```javascript
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+```
+
+---
+
+## 🚀 4. RUNNING THE APPLICATION
+
+### Step 1: Start the Backend
+In the `/backend` terminal:
+```bash
+python main.py
+```
+*Wait for the message: "Starting UVION AI Core on port 8003..."*
+
+### Step 2: Start the Frontend
+In the `/frontend` terminal:
+```bash
+npm run dev
+```
+
+### Step 3: Access the Hub
+Open your browser and navigate to the URL provided by Vite (usually `http://localhost:5173`).
+
+---
+
+## ⚠️ IMPORTANT TROUBLESHOOTING
+- **CORS Errors:** If you see "CORS Policy" errors, ensure the backend `main.py` has the correct frontend URL in the `origins` list.
+- **Connection Refused:** Ensure the backend is running on **8003**. If port 8003 is busy, change it in `main.py` AND `frontend/.env.local`.
+- **Firebase Permission Denied:** Ensure your Firestore rules are set to "Allow read, write: if request.auth != null;".
+
+---
+
+**You are now ready to pilot UVION!**

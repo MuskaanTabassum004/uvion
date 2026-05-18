@@ -12,7 +12,7 @@ const Signup: React.FC = () => {
     setLocalError(null);
     try {
       await loginWithGoogle();
-      navigate("/setup");
+      navigate("/dashboard");
     } catch (err: any) {
       setLocalError(err.message || "Google Signup failed.");
     } finally {
@@ -34,7 +34,7 @@ const Signup: React.FC = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/setup");
+      navigate("/dashboard");
     }
   }, [user, navigate]);
 
@@ -101,7 +101,7 @@ const Signup: React.FC = () => {
     setIsSubmitting(true);
     try {
       await signup(formData.email, formData.password, formData.displayName);
-      navigate("/setup");
+      navigate("/dashboard");
     } catch (err: any) {
       const errorMsg = err.message || "Signup failed. Please try again.";
       setLocalError(errorMsg);

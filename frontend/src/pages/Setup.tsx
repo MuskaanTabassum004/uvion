@@ -118,13 +118,15 @@ const Setup: React.FC = () => {
     setError(null);
 
     try {
-      await addDoc(collection(db, "farms"), {
+      const docRef = await addDoc(collection(db, "farms"), {
         userId: user.uid,
         ...formData,
         farmSize: Number(formData.farmSize),
         createdAt: new Date(),
         updatedAt: new Date()
       });
+      localStorage.setItem("uvion_active_farm_id", docRef.id);
+      localStorage.setItem("uvion_crop_type", formData.cropType);
       navigate("/dashboard");
     } catch (err: any) {
       setError("Failed to save farm details. Please try again.");

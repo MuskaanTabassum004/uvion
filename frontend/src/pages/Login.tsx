@@ -13,7 +13,7 @@ const Login: React.FC = () => {
     setLocalError(null);
     try {
       await loginWithGoogle();
-      navigate("/setup");
+      navigate("/dashboard");
     } catch (err: any) {
       setLocalError(err.message || "Google Login failed.");
     } finally {
@@ -30,7 +30,7 @@ const Login: React.FC = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/setup");
+      navigate("/dashboard");
     }
   }, [user, navigate]);
 
@@ -53,7 +53,7 @@ const Login: React.FC = () => {
     setIsSubmitting(true);
     try {
       await login(formData.email, formData.password);
-      navigate("/setup");
+      navigate("/dashboard");
     } catch (err: any) {
       const errorMsg = err.message || "Login failed. Please try again.";
       setLocalError(errorMsg);

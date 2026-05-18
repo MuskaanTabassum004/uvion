@@ -7,11 +7,11 @@ import { MapPin, Sprout, Calendar, Maximize, Droplets, Loader2, User, Check, Arr
 import "./Setup.css";
 
 const CROP_OPTIONS = [
-  { id: "Rice", name: "Rice", scientific: "Oryza sativa", image: "/assets/crops/rice.png" },
-  { id: "Tomato", name: "Tomato", scientific: "Solanum lycopersicum", image: "/assets/crops/tomato.png" },
-  { id: "Potato", name: "Potato", scientific: "Solanum tuberosum", image: "/assets/crops/potato.png" },
-  { id: "Maize", name: "Maize", scientific: "Zea mays", image: "/assets/crops/maize.png" },
-  { id: "Grapes", name: "Grapes", scientific: "Vitis vinifera", image: "/assets/crops/grapes.png" },
+  { id: "Rice", name: "Rice", scientific: "Oryza sativa", image: `${import.meta.env.BASE_URL}assets/crops/rice.png` },
+  { id: "Tomato", name: "Tomato", scientific: "Solanum lycopersicum", image: `${import.meta.env.BASE_URL}assets/crops/tomato.png` },
+  { id: "Potato", name: "Potato", scientific: "Solanum tuberosum", image: `${import.meta.env.BASE_URL}assets/crops/potato.png` },
+  { id: "Maize", name: "Maize", scientific: "Zea mays", image: `${import.meta.env.BASE_URL}assets/crops/maize.png` },
+  { id: "Grapes", name: "Grapes", scientific: "Vitis vinifera", image: `${import.meta.env.BASE_URL}assets/crops/grapes.png` },
 ];
 
 const Setup: React.FC = () => {

@@ -75,11 +75,12 @@ const DiseaseDetection: React.FC<DiseaseDetectionProps> = ({ onSwitchTab }) => {
 
   const getDiseaseImage = (diseaseName: string) => {
     const name = diseaseName.toLowerCase().replace(/\s+/g, '_');
-    if (name.includes('rust')) return '/assets/diseases/common_rust.png';
-    if (name.includes('blight')) return '/assets/diseases/early_blight.png';
-    if (name.includes('spot')) return '/assets/diseases/brown_spot.png';
-    if (name.includes('healthy')) return '/assets/diseases/healthy.png';
-    return '/assets/diseases/healthy.png'; // Fallback
+    const base = import.meta.env.BASE_URL;
+    if (name.includes('rust')) return `${base}assets/diseases/common_rust.png`;
+    if (name.includes('blight')) return `${base}assets/diseases/early_blight.png`;
+    if (name.includes('spot')) return `${base}assets/diseases/brown_spot.png`;
+    if (name.includes('healthy')) return `${base}assets/diseases/healthy.png`;
+    return `${base}assets/diseases/healthy.png`; // Fallback
   };
 
   return (

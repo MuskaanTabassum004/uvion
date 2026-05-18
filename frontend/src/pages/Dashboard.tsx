@@ -1220,17 +1220,6 @@ const Dashboard: React.FC = () => {
               {/* Smart Intelligence Hub */}
               {weatherIntelligence ? (
                 <div className="intelligence-hub">
-                  {/* Impact Summary Header */}
-                  <div className="impact-summary-box">
-                    <div className="i-icon">
-                      <AlertCircle size={20} />
-                    </div>
-                    <div className="i-text">
-                      <strong>Impact Summary:</strong>{" "}
-                      {weatherIntelligence.impact_summary}
-                    </div>
-                  </div>
-
                   {weatherIntelligence.risk_build_up && (
                     <div className="i-card risk-build-card">
                       <h3>Risk Build-Up</h3>
